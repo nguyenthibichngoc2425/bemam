@@ -1,0 +1,14 @@
+source_loc: "app.js:1-128"
+side_effects:
+  - action: "Updates chat DOM and localStorage settings/progress"
+    must_preserve: true
+branches:
+  - condition: "API succeeds, times out, or returns invalid data"
+    must_preserve: true
+error_paths:
+  - condition: "Backend unavailable"
+    contract: "Visible demo/connection state; never claim fallback is AI output"
+    must_preserve: true
+concurrency:
+  model: "one user submission at a time per form"
+  tx_boundary: "A practice answer is recorded only after a real option click."

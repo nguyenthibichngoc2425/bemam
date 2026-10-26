@@ -1,0 +1,13 @@
+flows:
+  - source: "app.js:2-3"
+    state: "age and conversation messages"
+    from_units: [static-page]
+    to_units: [chat-api, tutor-api, practice-api]
+    pairing: matched
+    must_preserve: true
+  - source: "app.js:87-92"
+    state: "practice progress in localStorage"
+    from_units: [static-page]
+    to_units: []
+    pairing: matched
+    must_preserve: true

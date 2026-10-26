@@ -1,0 +1,18 @@
+shared_modules:
+  - source_loc: "server.js:1-33"
+    kind: "backend-adapter-and-shared-validation"
+    used_by_units: [chat-api, tutor-api, practice-api]
+    fields:
+      - name: ollamaUrl
+        type: string
+      - name: model
+        type: string
+      - name: ageInstruction
+        type: function
+      - name: requireText
+        type: function
+      - name: ollama
+        type: function
+    used_fields: [ollamaUrl, model, ageInstruction, requireText, ollama]
+    split_candidate: "Separate validation, model adapter, and orchestration modules after the API contract is frozen."
+    migration_strategy: "Preserve transport behavior; extract shared services without changing endpoint semantics in the first increment."

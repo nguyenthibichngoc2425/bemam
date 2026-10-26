@@ -1,0 +1,5 @@
+commit: false
+candidate_splits:
+  - name: "chat-route and chat-orchestrator"
+    drivers: [framework-boundary, testability]
+    rationale: "Route validation and educational task orchestration have different responsibilities."

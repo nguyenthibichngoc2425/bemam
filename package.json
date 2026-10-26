@@ -1,0 +1,15 @@
+{
+  "name": "mam-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mầm AI - trợ lý học tập cá nhân hóa cho học sinh",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "benchmark": "node benchmark.js",
+    "benchmark:core": "node --input-type=module -e \"import('./ai-core.js').then(async ({ classifyTask, calculateExpression, validatePracticeQuestions }) => { const cases = [{ text: '24 + 18 bằng bao nhiêu?', result: 42 }, { text: '72 ÷ 8 bằng bao nhiêu?', result: 9 }, { text: 'Một hình chữ nhật dài 8 cm, rộng 5 cm.', result: null }]; for (const item of cases) console.log(JSON.stringify({ text: item.text, classification: classifyTask(item.text), calculation: calculateExpression(item.text) })); console.log(JSON.stringify(validatePracticeQuestions([{ question: 'Một cộng một bằng?', options: ['1', '2', '3'], answer: 1, explanation: '1 cộng 1 bằng 2.' }], 1))); })\""
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

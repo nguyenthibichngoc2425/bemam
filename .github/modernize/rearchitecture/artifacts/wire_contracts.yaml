@@ -1,0 +1,16 @@
+contracts:
+  - source: "server.js:35-44"
+    endpoint: "POST /api/chat"
+    stability: frozen
+    current_contract: "age plus up to 12 role/content messages; response contains message"
+    target_contract: "request returns task status, answer text, evidence list, assumptions, validation findings, and model metadata; preserve message compatibility during migration"
+  - source: "server.js:46-53"
+    endpoint: "POST /api/tutor"
+    stability: frozen
+    current_contract: "age plus problem; response contains message"
+    target_contract: "response contains a guided solution, assumptions, checks, and uncertainty while retaining message for the existing UI"
+  - source: "server.js:55-64"
+    endpoint: "POST /api/practice"
+    stability: frozen
+    current_contract: "topic, subject, difficulty, count; response contains questions"
+    target_contract: "questions include question, options, answer, explanation, difficulty, skill, and validation status; invalid sets are rejected before reaching the browser"

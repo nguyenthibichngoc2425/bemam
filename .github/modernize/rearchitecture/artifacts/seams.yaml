@@ -1,0 +1,11 @@
+seams:
+  - name: "GitHub Pages to AI backend"
+    source: inferred
+    frozen_side: "static-page"
+    frozen_side_rule: "Do not require GitHub Pages to execute Node.js or access Ollama directly; adapt through an explicit HTTPS API base."
+    protocol_shift: "same-origin local development to cross-origin production API"
+    bridge_points:
+      - mapping_rule: "Browser calls only allowlisted backend paths; backend calls only configured Ollama URL."
+        edge_cases: "Reject unknown origins, oversized payloads, timeouts, malformed JSON, and unavailable model."
+        idempotency_retry: "Do not automatically retry learner submissions; a manual retry must create a new request."
+        fallback: "Show connection/demo state, never fabricated model output."

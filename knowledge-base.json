@@ -1,0 +1,34 @@
+[
+  {
+    "id": "physics-light-scattering",
+    "title": "Why is the sky blue?",
+    "subject": "Khoa học",
+    "text": "Ánh sáng Mặt Trời gồm nhiều màu. Khi đi qua khí quyển, các phân tử không khí tán xạ ánh sáng xanh mạnh hơn các màu có bước sóng dài hơn, nên bầu trời thường có màu xanh vào ban ngày.",
+    "source": "NASA Science - Why Is the Sky Blue?",
+    "url": "https://science.nasa.gov/earth/earth-observatory/why-is-the-sky-blue/"
+  },
+  {
+    "id": "math-area-rectangle",
+    "title": "Diện tích hình chữ nhật",
+    "subject": "Toán học",
+    "text": "Diện tích hình chữ nhật được tính bằng chiều dài nhân với chiều rộng. Hai kích thước phải được đo cùng đơn vị trước khi tính.",
+    "source": "OpenStax Elementary Algebra - Measurement",
+    "url": "https://openstax.org/details/books/elementary-algebra-2e"
+  },
+  {
+    "id": "science-water-cycle",
+    "title": "Vòng tuần hoàn của nước",
+    "subject": "Khoa học",
+    "text": "Nước trên Trái Đất liên tục di chuyển qua các quá trình bay hơi, ngưng tụ, mưa và dòng chảy. Mặt Trời cung cấp phần lớn năng lượng cho quá trình này.",
+    "source": "USGS Water Science School - The Water Cycle",
+    "url": "https://www.usgs.gov/special-topics/water-science-school/science/water-cycle"
+  },
+  {
+    "id": "learning-explanation",
+    "title": "Học bằng cách tự giải thích",
+    "subject": "Phương pháp học",
+    "text": "Tự giải thích một ý bằng lời của mình có thể giúp người học phát hiện phần chưa hiểu. Ví dụ và câu hỏi kiểm tra giúp biến việc đọc thụ động thành hoạt động suy nghĩ.",
+    "source": "The Learning Scientists - Retrieval Practice",
+    "url": "https://www.learningscientists.org/blog/2016/6/23-1"
+  }
+]

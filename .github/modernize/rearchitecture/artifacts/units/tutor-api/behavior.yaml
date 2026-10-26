@@ -1,0 +1,17 @@
+source_loc: "server.js:46-53"
+side_effects: []
+branches:
+  - condition: "Reject missing or oversized problem"
+    must_preserve: true
+  - condition: "Timeout or invalid Ollama response"
+    must_preserve: true
+error_paths:
+  - condition: "Invalid request"
+    contract: "400 JSON error"
+    must_preserve: true
+  - condition: "Model failure"
+    contract: "502 JSON error"
+    must_preserve: true
+concurrency:
+  model: "independent bounded HTTP request"
+  tx_boundary: "One tutor request maps to one model invocation in the current implementation."

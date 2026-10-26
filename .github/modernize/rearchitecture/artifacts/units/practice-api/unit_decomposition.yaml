@@ -1,0 +1,5 @@
+commit: false
+candidate_splits:
+  - name: "question-generator and question-validator"
+    drivers: [deterministic-verification, security-boundary, testability]
+    rationale: "Generation depends on the model; validation must remain deterministic and independently testable."

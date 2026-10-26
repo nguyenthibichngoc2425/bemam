@@ -1,0 +1,8 @@
+commit: false
+candidate_splits:
+  - name: "chat-ui"
+    drivers: [separate-user-flow]
+    rationale: "Chat rendering and submission can evolve independently from practice progress."
+  - name: "practice-ui"
+    drivers: [separate-user-flow, state-boundary]
+    rationale: "Question rendering and scoring have a distinct state lifecycle."

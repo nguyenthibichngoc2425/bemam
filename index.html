@@ -3,122 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Mầm AI - người bạn học tập và vui chơi an toàn cho trẻ em." />
-    <title>Mầm AI - Bạn đồng hành của bé</title>
+    <meta name="description" content="Mầm AI - trợ lý học tập cá nhân hóa, an toàn cho học sinh." />
+    <title>Mầm AI — Hỏi để hiểu, học để tiến bộ</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#" aria-label="Mầm AI trang chủ">
-        <span class="brand-mark">🌱</span>
+      <a class="brand" href="#top" aria-label="Về trang chủ Mầm AI">
+        <span class="brand-mark" aria-hidden="true">🌱</span>
         <span>Mầm AI</span>
       </a>
       <div class="topbar-actions">
-        <label class="age-picker">
-          <span>Độ tuổi</span>
+        <label class="age-picker" for="ageSelect">Độ tuổi
           <select id="ageSelect" aria-label="Chọn độ tuổi">
             <option value="6-8">6–8 tuổi</option>
             <option value="9-11" selected>9–11 tuổi</option>
             <option value="12-14">12–14 tuổi</option>
           </select>
         </label>
-        <button class="parent-button" id="parentButton" type="button">👨‍👩‍👧 Khu phụ huynh</button>
+        <button class="parent-button" id="parentButton" type="button">Khu phụ huynh</button>
       </div>
     </header>
 
-    <main class="app-shell">
+    <main id="top" class="app-shell">
       <section class="hero">
-        <div>
-          <p class="eyebrow">HỌC HỎI • KHÁM PHÁ • VUI CHƠI</p>
-          <h1>Chào bạn nhỏ!<br /><span>Cùng Mầm khám phá nhé.</span></h1>
-          <p class="hero-copy">Một người bạn AI vui vẻ, giải thích dễ hiểu và luôn đặt sự an toàn của bé lên trước.</p>
+        <div class="hero-content">
+          <p class="eyebrow">TRỢ LÝ HỌC TẬP CÁ NHÂN HÓA</p>
+          <h1>Hỏi để hiểu.<br /><span>Học theo cách của mình.</span></h1>
+          <p class="hero-copy">Mầm giúp bé hiểu bài bằng những bước nhỏ, luyện tập vừa sức và tiến bộ từng ngày.</p>
+          <div class="hero-actions">
+            <button class="primary-button" data-jump="ask">Bắt đầu hỏi Mầm <span aria-hidden="true">→</span></button>
+            <button class="text-button" data-jump="practice">Thử một bài luyện tập</button>
+          </div>
         </div>
         <div class="hero-illustration" aria-hidden="true">
-          <span class="cloud cloud-one">☁️</span>
-          <span class="sun">☀️</span>
-          <span class="plant">🌿</span>
-          <span class="hero-face">😊</span>
+          <span class="sun">☀</span><span class="cloud cloud-one">☁</span>
+          <div class="seedling">🌱</div><span class="sparkle sparkle-one">✦</span><span class="sparkle sparkle-two">✧</span>
         </div>
       </section>
 
-      <nav class="mode-tabs" aria-label="Chọn hoạt động">
-        <button class="mode-tab active" data-mode="ask" type="button">💬 Hỏi đáp</button>
-        <button class="mode-tab" data-mode="analyze" type="button">🔎 Phân tích bài</button>
-        <button class="mode-tab" data-mode="play" type="button">🎮 Vui chơi</button>
+      <section class="value-grid" aria-label="Ba giá trị của Mầm AI">
+        <article><span class="value-number">01</span><h2>Hỏi để hiểu</h2><p>Đặt câu hỏi tự nhiên, nhận lời giải thích dễ hiểu và có ví dụ gần gũi.</p></article>
+        <article><span class="value-number">02</span><h2>Học theo cách của mình</h2><p>Mầm điều chỉnh lời giải theo độ tuổi, môn học và điều bé đang cần.</p></article>
+        <article><span class="value-number">03</span><h2>Luyện tập để tiến bộ</h2><p>Làm bài, nhận phản hồi và nhìn lại chủ đề cần ôn thêm.</p></article>
+      </section>
+
+      <nav class="mode-tabs" aria-label="Các hoạt động học tập">
+        <button class="mode-tab active" data-mode="ask" type="button">Hỏi đáp</button>
+        <button class="mode-tab" data-mode="analyze" type="button">Gỡ rối bài học</button>
+        <button class="mode-tab" data-mode="practice" type="button">Tạo bài luyện tập</button>
+        <button class="mode-tab" data-mode="progress" type="button">Tiến độ của bé</button>
       </nav>
 
       <section class="content-card">
         <div class="mode-panel active" id="askPanel">
-          <div class="panel-heading">
-            <div>
-              <p class="panel-kicker">GÓC HỎI ĐÁP</p>
-              <h2>Bé muốn hỏi điều gì?</h2>
-            </div>
-            <span class="status-pill"><i></i> Mầm đang online</span>
-          </div>
+          <div class="panel-heading"><div><p class="panel-kicker">HỎI ĐỂ HIỂU</p><h2>Bé muốn hỏi điều gì?</h2></div><span class="status-pill" id="connectionStatus"><i></i> AI trình duyệt nhẹ</span></div>
           <div class="chat-window" id="chatWindow" aria-live="polite">
-            <div class="message bot">
-              <span class="avatar">🌱</span>
-              <div><strong>Mầm</strong><p>Chào bé! Mầm có thể kể chuyện, giải thích bài học hoặc cùng bé khám phá thế giới. Bé muốn bắt đầu với điều gì?</p></div>
-            </div>
+            <div class="message bot"><span class="avatar" aria-hidden="true">🌱</span><div><strong>Mầm</strong><p>Chào bé! Mầm có thể giải thích bài học bằng những từ thật dễ hiểu. Bé muốn bắt đầu với điều gì?</p></div></div>
           </div>
           <form class="input-row" id="chatForm">
-            <input id="chatInput" maxlength="240" autocomplete="off" placeholder="Ví dụ: Vì sao bầu trời có màu xanh?" aria-label="Câu hỏi cho Mầm" />
-            <button class="send-button" id="sendButton" type="submit">Gửi <span>➜</span></button>
+            <label class="sr-only" for="chatInput">Câu hỏi cho Mầm</label>
+            <input id="chatInput" maxlength="500" required autocomplete="off" placeholder="Ví dụ: Vì sao bầu trời có màu xanh?" />
+            <button class="send-button" id="sendButton" type="submit">Gửi <span aria-hidden="true">→</span></button>
           </form>
-          <div class="input-meta"><span id="chatHint">Bé có thể hỏi tối đa 240 ký tự.</span><span id="charCount">0/240</span></div>
+          <div class="input-meta"><span>Không nhập tên, địa chỉ hay thông tin riêng tư.</span><span id="charCount">0/500</span></div>
           <div class="suggestions" aria-label="Câu hỏi gợi ý">
-            <button type="button" data-question="Kể cho mình một câu chuyện ngắn về lòng dũng cảm">📖 Dũng cảm</button>
-            <button type="button" data-question="Kể một truyện cổ tích về tình bạn">🏰 Cổ tích</button>
-            <button type="button" data-question="Kể một câu chuyện phiêu lưu ngoài không gian">🚀 Phiêu lưu</button>
-            <button type="button" data-question="Kể một câu chuyện hài hước về chú mèo">😺 Hài hước</button>
-            <button type="button" data-question="Kể một truyện khoa học viễn tưởng ngắn">🔬 Khoa học</button>
-            <button type="button" data-question="Vì sao bầu trời có màu xanh?">🌈 Vì sao?</button>
-            <button type="button" data-question="Cho mình một câu đố vui">🧩 Câu đố</button>
+            <button type="button" data-question="Vì sao bầu trời có màu xanh?">Vì sao bầu trời xanh?</button>
+            <button type="button" data-question="Giải thích phân số bằng một ví dụ gần gũi">Ví dụ về phân số</button>
+            <button type="button" data-question="Thế nào là một hệ sinh thái?">Hệ sinh thái là gì?</button>
           </div>
         </div>
 
         <div class="mode-panel" id="analyzePanel">
-          <div class="panel-heading">
-            <div><p class="panel-kicker">GÓC HỌC TẬP</p><h2>Cùng giải bài thật dễ nhé!</h2></div>
-            <span class="tip-badge">✨ Không chép đáp án</span>
-          </div>
-          <p class="panel-description">Nhập một phép tính hoặc câu hỏi bài học. Mầm sẽ gợi ý từng bước để bé tự tìm ra đáp án.</p>
-          <form class="analysis-form" id="analysisForm">
-            <textarea id="analysisInput" rows="3" placeholder="Ví dụ: 24 + 18 hoặc Vì sao cây cần ánh sáng?"></textarea>
-            <button class="primary-button" type="submit">🔎 Phân tích cùng Mầm</button>
-          </form>
-          <div class="analysis-result empty" id="analysisResult">Kết quả gợi ý sẽ xuất hiện ở đây.</div>
+          <div class="panel-heading"><div><p class="panel-kicker">HỌC THEO CÁCH CỦA MÌNH</p><h2>Cùng gỡ rối bài học</h2></div><span class="tip-badge">Không chỉ chép đáp án</span></div>
+          <p class="panel-description">Nhập đề bài hoặc phần bé chưa hiểu. Mầm sẽ xác định điểm khó, giải thích nền tảng, chia bước và đặt câu hỏi dẫn dắt.</p>
+          <form class="analysis-form" id="analysisForm"><label class="sr-only" for="analysisInput">Nội dung bài học cần gỡ rối</label><textarea id="analysisInput" maxlength="2000" rows="5" required placeholder="Ví dụ: Một hình chữ nhật dài 8 cm, rộng 5 cm. Tính diện tích và giải thích vì sao..."></textarea><button class="primary-button" type="submit">Gỡ rối cùng Mầm <span>→</span></button></form>
+          <div class="analysis-result empty" id="analysisResult" aria-live="polite">Gợi ý từng bước sẽ xuất hiện ở đây.</div>
           <button class="reset-button" id="resetAnalysis" type="button">Xóa bài và làm lại</button>
         </div>
 
-        <div class="mode-panel" id="playPanel">
-          <div class="panel-heading">
-            <div><p class="panel-kicker">GÓC VUI CHƠI</p><h2>Thử tài nhanh như chớp!</h2></div>
-            <span class="score-badge">⭐ Điểm: <b id="score">0</b></span>
-          </div>
-          <div class="quiz-card">
-            <span class="quiz-category" id="quizCategory">ĐỐ VUI TỰ NHIÊN</span>
-            <h3 id="quizQuestion">Con vật nào thường được gọi là “vua của rừng xanh”?</h3>
-            <div class="answers" id="answers">
-                <button type="button" data-answer="wrong">🐯 Hổ</button>
-              <button type="button" data-answer="correct">🦁 Sư tử</button>
-              <button type="button" data-answer="wrong">🐘 Voi</button>
-            </div>
-            <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
-            <button class="next-button" id="nextQuestion" type="button" hidden>Câu tiếp theo ➜</button>
-            <button class="reset-button" id="resetQuiz" type="button">Chơi lại từ đầu</button>
-          </div>
+        <div class="mode-panel" id="practicePanel">
+          <div class="panel-heading"><div><p class="panel-kicker">LUYỆN TẬP ĐỂ TIẾN BỘ</p><h2>Tạo bộ bài vừa sức</h2></div><span class="tip-badge">AI tạo theo lựa chọn</span></div>
+          <form class="practice-form" id="practiceForm">
+            <label>Môn học<select id="subjectSelect"><option>Toán</option><option>Khoa học</option><option>Tiếng Việt</option><option>Tiếng Anh</option></select></label>
+            <label>Chủ đề<input id="topicInput" maxlength="80" required value="Phép cộng và phép trừ" /></label>
+            <label>Độ khó<select id="difficultySelect"><option value="cơ bản">Cơ bản</option><option value="trung bình">Trung bình</option><option value="thử thách">Thử thách</option></select></label>
+            <label>Số câu<select id="questionCount"><option value="3">3 câu</option><option value="5" selected>5 câu</option><option value="8">8 câu</option></select></label>
+            <button class="primary-button" type="submit">Tạo bài luyện tập</button>
+          </form>
+          <div id="practiceArea" class="practice-area empty">Hãy chọn chủ đề rồi bấm “Tạo bài luyện tập”.</div>
+        </div>
+
+        <div class="mode-panel" id="progressPanel">
+          <div class="panel-heading"><div><p class="panel-kicker">NHÌN LẠI HÀNH TRÌNH</p><h2>Tiến độ của bé</h2></div><span class="status-pill">Lưu trên trình duyệt</span></div>
+          <div id="progressContent" class="progress-content"></div>
         </div>
       </section>
 
-      <aside class="safety-note">
-        <span>🛡️</span>
-        <p><strong>An toàn cho bé:</strong> Mầm không yêu cầu thông tin riêng tư. Nếu gặp điều làm bé lo lắng, hãy nói ngay với người lớn bé tin tưởng nhé.</p>
-      </aside>
+      <aside class="safety-note"><span aria-hidden="true">🛡</span><p><strong>An toàn cho bé:</strong> Mầm không yêu cầu thông tin riêng tư. Đây là bản demo; câu trả lời AI cần được người lớn kiểm tra khi dùng cho bài học quan trọng.</p></aside>
     </main>
 
-    <footer>🌱 Mầm AI là bản demo học tập an toàn dành cho trẻ em.</footer>
+    <div class="modal-backdrop" id="parentModal" hidden>
+      <section class="parent-modal" role="dialog" aria-modal="true" aria-labelledby="parentTitle">
+        <button class="modal-close" id="closeParent" type="button" aria-label="Đóng">×</button>
+        <p class="panel-kicker">KHU THÔNG TIN PHỤ HUYNH</p><h2 id="parentTitle">Đồng hành cùng bé</h2>
+        <p>Mầm AI giúp bé đặt câu hỏi, hiểu bài và luyện tập. Phiên bản này không có tài khoản, không phải hệ thống quản lý phụ huynh và không lưu dữ liệu lên máy chủ.</p>
+        <div class="parent-list"><strong>Ba điều nên nhớ</strong><span>• Khuyến khích bé đọc lời giải và tự nói lại bằng lời của mình.</span><span>• Không nhập họ tên, địa chỉ, số điện thoại hoặc thông tin nhạy cảm.</span><span>• Cùng bé kiểm tra nguồn và đáp án trước khi sử dụng cho bài nộp.</span></div>
+        <button class="primary-button" id="closeParentAction" type="button">Đã hiểu</button>
+      </section>
+    </div>
+    <footer>Mầm AI · Hỏi để hiểu · Học theo cách của mình · Luyện tập để tiến bộ</footer>
     <script src="app.js"></script>
   </body>
 </html>

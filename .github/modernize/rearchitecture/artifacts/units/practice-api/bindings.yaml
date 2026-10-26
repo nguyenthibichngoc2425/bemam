@@ -1,0 +1,6 @@
+bindings:
+  - name: "Express POST /api/practice"
+    must_appear_in_target: true
+runtime_config:
+  - name: "OLLAMA_URL and OLLAMA_MODEL"
+    must_appear_in_target: true

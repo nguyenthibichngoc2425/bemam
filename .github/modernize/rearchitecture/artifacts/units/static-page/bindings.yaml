@@ -1,0 +1,6 @@
+bindings:
+  - name: "data-mode tabs and form listeners"
+    must_appear_in_target: true
+runtime_config:
+  - name: "MAM_AI_API_BASE"
+    must_appear_in_target: true

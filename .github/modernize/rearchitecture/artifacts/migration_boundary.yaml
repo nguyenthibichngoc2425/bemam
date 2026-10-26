@@ -1,0 +1,18 @@
+strategy: "incremental-ai-core-replacement"
+user_intent:
+  acceptance: "Replace one-shot prompt handling with routed, retrievable, tool-assisted, verifiable learning responses."
+  cleanup_required: false
+must_rewrite:
+  - "server.js:35-70: route requests through a task classifier and bounded orchestration pipeline."
+  - "app.js:34-48: represent AI connection, insufficient-data, and validated-result states distinctly."
+  - "practice response validation: validate semantic consistency before scoring."
+copy_as_is:
+  - "index.html: learner-facing layout and safety copy unless UX testing identifies a needed change."
+  - "styles.css: visual system and responsive layout."
+legacy_allowed_to_remain:
+  - "The connection fallback may remain, but it must never be presented as model output."
+defer_cleanup:
+  - "Account system, cloud persistence, production rate limiting, and multi-tenant deployment."
+notes:
+  - "No code rewrite was performed during this assessment."
+  - "Source anchors are evidence of current behavior, not a mandate to rewrite every file."

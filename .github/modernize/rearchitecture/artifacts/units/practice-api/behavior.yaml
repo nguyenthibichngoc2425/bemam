@@ -1,0 +1,14 @@
+source_loc: "server.js:55-64"
+side_effects: []
+branches:
+  - condition: "Clamp question count to 3..8"
+    must_preserve: true
+  - condition: "Reject malformed JSON or wrong question count"
+    must_preserve: true
+concurrency:
+  model: "independent bounded HTTP request"
+  tx_boundary: "Question set is returned only after basic structural validation."
+error_paths:
+  - condition: "Invalid generated set"
+    contract: "502 JSON error; browser must not score it"
+    must_preserve: true

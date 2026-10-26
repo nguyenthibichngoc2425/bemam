@@ -1,0 +1,25 @@
+units:
+  - name: static-page
+    source_anchors: [index.html, styles.css]
+    exported_signature: "GET / -> index.html"
+    dynamic_entrypoints: []
+    depends_on: [chat-api, tutor-api, practice-api]
+    shared_refs: [browser-state]
+  - name: chat-api
+    source_anchors: [server.js:35]
+    exported_signature: "POST /api/chat -> { message }"
+    dynamic_entrypoints: []
+    depends_on: [ollama-adapter]
+    shared_refs: [input-validation, age-instruction]
+  - name: tutor-api
+    source_anchors: [server.js:46]
+    exported_signature: "POST /api/tutor -> { message }"
+    dynamic_entrypoints: []
+    depends_on: [ollama-adapter]
+    shared_refs: [input-validation, age-instruction]
+  - name: practice-api
+    source_anchors: [server.js:55]
+    exported_signature: "POST /api/practice -> { questions }"
+    dynamic_entrypoints: []
+    depends_on: [ollama-adapter]
+    shared_refs: [input-validation, age-instruction]

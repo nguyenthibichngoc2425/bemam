@@ -1,0 +1,5 @@
+commit: false
+candidate_splits:
+  - name: "problem-parser and solution-verifier"
+    drivers: [deterministic-verification, testability]
+    rationale: "Parsing known arithmetic/unit problems can be independently tested before model explanation."

@@ -1,0 +1,17 @@
+source_loc: "server.js:35-44"
+side_effects: []
+branches:
+  - condition: "Reject malformed age, history, or message content"
+    must_preserve: true
+  - condition: "Ollama timeout or non-2xx response"
+    must_preserve: true
+error_paths:
+  - condition: "Invalid request"
+    contract: "400 JSON error"
+    must_preserve: true
+  - condition: "Model failure"
+    contract: "502 JSON error without internal details"
+    must_preserve: true
+concurrency:
+  model: "independent HTTP requests, bounded by future rate limiter"
+  tx_boundary: "One chat request maps to one model invocation in the current implementation."
